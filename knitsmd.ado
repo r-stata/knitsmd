@@ -9,9 +9,9 @@ program define knitsmd, rclass
 	rcall: rstatacreator::code_split(`smdfile')
 	do temp_smd_dofile.do
 	if "`keeppic'" != "" {
-		rcall: rstatacreator::logfile_handel(`smdfile', delete_pic = F)
+		rcall: rstatacreator::logfile_handel(`smdfile', delete_pic = F, pandoc_dir = "/opt/homebrew/bin")
 	}
 	if "`keeppic'" == "" {
-		rcall: rstatacreator::logfile_handel(`smdfile', delete_pic = T)
+		rcall: rstatacreator::logfile_handel(`smdfile', delete_pic = T, pandoc_dir = "/opt/homebrew/bin")
 	}
 end
